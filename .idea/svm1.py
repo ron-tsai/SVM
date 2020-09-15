@@ -1,11 +1,21 @@
+#1导入模块
 from sklearn.datasets import make_blobs
 from sklearn.svm import SVC
 import matplotlib.pyplot as plt
 import numpy as np
 
+#2实例化数据集，可视化数据集
 x,y = make_blobs(n_samples=50,centers=2,random_state=0,cluster_std=0.6)
 plt.scatter(x[:,0],x[:,1],c=y,s=50,cmap='rainbow')
+
+plt.xticks([])
+plt.yticks([])
+plt.show()
+#3画决策边界
+#首先要获取样本构成平面，作为一个对象
+plt.scatter(x[:,0],x[:,1],c=y,s=50,cmap='rainbow')
 ax=plt.gca()
+#4画决策边界：制作网格，理解函数meshgrid
 #获取平面上两条坐标轴最大值和最小值
 xlim=ax.get_xlim()
 ylim=ax.get_ylim()

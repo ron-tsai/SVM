@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-#将上述过程包装成函数：
+#6将上述过程包装成函数：
 def plot_svc_decision_function(model,ax=None):
     if ax is None:
         ax=plt.gca()
